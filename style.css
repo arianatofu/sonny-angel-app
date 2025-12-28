@@ -1,36 +1,108 @@
 body {
+  margin: 0;
   font-family: "Arial", sans-serif;
   background-color: #fff0f6;
+}
+
+/* 🌸 Top Navbar */
+.top-nav {
+  background-color: #FFDEEB;
+  padding: 16px;
   text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 🌷 Main layout */
+.layout {
+  display: flex;
+  height: calc(100vh - 64px);
+}
+
+/* 🎀 Side Navbar */
+.side-nav {
+  width: 200px;
+  background-color: #FFDEEB;
+  padding: 16px;
+}
+
+.side-nav h3 {
+  margin-top: 0;
+}
+
+.side-nav p {
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+/* 🤍 Main Content Area */
+.main-content {
+  flex: 1;
+  background-color: #fffdfc;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.subtitle {
+  color: #a0616a;
+  margin-bottom: 16px;
+}
+
+/* 🧸 Sonny cards */
+.series {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .sonny {
   background: white;
   padding: 12px;
-  margin: 12px auto;
-  width: 200px;
-  border-radius: 12px;
-}
-
-.series {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-
-h2 {
-  color: #ff99cc;
-  margin-top: 24px;
+  width: 140px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.0);
 }
 
 .sonny img {
   width: 100px;
-  height: auto;
-  margin-bottom: 8px;
-}
-
-.sonny img {
   border-radius: 12px;
 }
+
+button {
+  margin-top: 8px;
+  background-color: #FFC9DE;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.side-nav p:hover {
+  text-decoration: underline;
+}
+
+.sonny {
+  position: relative;
+}
+
+.secret-star {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+}
+
+.heart {
+  width: 22px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.heart:hover {
+  transform: scale(1.15);
+}
+
+
+
 
