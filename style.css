@@ -1,0 +1,36 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fff0f6;
+  text-align: center;
+}
+
+.sonny {
+  background: white;
+  padding: 12px;
+  margin: 12px auto;
+  width: 200px;
+  border-radius: 12px;
+}
+
+.series {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+h2 {
+  color: #ff99cc;
+  margin-top: 24px;
+}
+
+.sonny img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.sonny img {
+  border-radius: 12px;
+}
+
