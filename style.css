@@ -161,7 +161,7 @@ button {
   border-bottom: 4px solid #FFC9DE;
 
   /* ✍️ Text Styling */
-  font-size: 32px;        /* Keeping the larger size you liked */
+  font-size: 32px;       
   font-weight: bold;
   color: #a0616a;
   letter-spacing: 2px;
@@ -170,7 +170,7 @@ button {
 
 /* 🎀 The Logo Style */
 .nav-logo {
-  height: 30px;           /* Bumped up slightly from 30px so it's visible */
+  height: 30px;           
   width: auto;
   display: block;
 }
@@ -185,7 +185,7 @@ button {
   /* Make it stay put when you scroll */
   position: sticky;
   top: 0;
-  height: calc(100vh - 120px); /* Adjust based on your banner height */
+  height: calc(100vh - 120px); /* Adjust based on banner height */
   display: flex;
   flex-direction: column;
 }
@@ -237,7 +237,7 @@ button {
   font-size: 14px;
   text-align: center;
   color: #a0616a;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.00);
 }
 
 /* 1. Smooth scrolling */
@@ -247,7 +247,7 @@ html {
 
 /* 2. Don't hide the title under the banner */
 h2 {
-  scroll-margin-top: 160px; /* Adjust this number to match your banner's height */
+  scroll-margin-top: 160px; /* Adjust this number to match banner's height */
   color: #a0616a;
   margin-top: 40px;
 }
