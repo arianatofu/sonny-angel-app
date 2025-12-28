@@ -35,6 +35,10 @@ body {
   margin: 8px 0;
 }
 
+.side-nav p:hover {
+  text-decoration: underline;
+}
+
 /* 🤍 Main Content Area */
 .main-content {
   flex: 1;
@@ -56,16 +60,18 @@ body {
 }
 
 .sonny {
+  position: relative;      /* for absolute icons */
   background: white;
   padding: 12px;
   width: 140px;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.0);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.001);
+  margin-bottom: 16px;
 }
 
 .sonny img {
-  width: 100px;
+  width: 120px;
   border-radius: 12px;
 }
 
@@ -78,29 +84,59 @@ button {
   cursor: pointer;
 }
 
-.side-nav p:hover {
-  text-decoration: underline;
-}
-
 .sonny {
   position: relative;
+  text-align: center;
 }
 
-.secret-star {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 18px;
-}
 
+
+/* 💖 Heart icon */
 .heart {
-  width: 22px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 1px;             /* smaller, cute size */
+  height: auto;            /* keep it square */
   cursor: pointer;
-  margin-top: 6px;
+  transition: transform 0.2s; /* smooth hover effect */
 }
 
 .heart:hover {
   transform: scale(1.15);
+}
+
+/* ⭐ Secret star */
+.secret-star {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 1px;             /* smaller size */
+  height: auto;            /* square */
+}
+
+
+
+/* make icons smaller
+
+/* This targets any image inside the collection div that has the heart or secret-star class */
+#collection .heart, 
+#collection .secret-star {
+  width: 25px !important;  /* 'important' forces the size even if JS tries to change it */
+  height: 25px !important; 
+  position: absolute;
+  object-fit: contain;    /* Keeps the shape from getting squished */
+}
+
+/* Adjust positions so they don't touch the very edge */
+#collection .heart {
+  top: 5px;
+  right: 5px;
+}
+
+#collection .secret-star {
+  top: 5px;
+  left: 5px;
 }
 
 

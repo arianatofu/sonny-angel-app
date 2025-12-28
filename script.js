@@ -32,69 +32,68 @@ const sonnySeries = {
 const collectionDiv = document.getElementById("collection");
 
 for (const series in sonnySeries) {
-  // Create series title
+  // Series title
   const seriesTitle = document.createElement("h2");
   seriesTitle.textContent = series;
   collectionDiv.appendChild(seriesTitle);
 
-  // Create container for this series
+  // Container for cards
   const seriesContainer = document.createElement("div");
   seriesContainer.className = "series";
 
-  // Create cards
-    sonnySeries[series].forEach(sonny => {
+  // Cards
+  sonnySeries[series].forEach(sonny => {
     const card = document.createElement("div");
     card.className = "sonny";
+    card.style.position = "relative"; // important for absolute children
 
-    if (sonny.secret) {
-        const star = document.createElement("img");
-        star.src = "images/star.png";
-        star.className = "secret-star";
-        star.alt = "Secret";
-        card.appendChild(star);
-}
-
-  // Create images
-    const img = document.createElement("img");
-    img.src = sonny.img;
-    img.alt = sonny.name;
-
-    const label = document.createElement("p");
-    label.textContent = sonny.name;
-
+    // Heart in top-right
     const heart = document.createElement("img");
     heart.src = "images/heart-empty.png";
     heart.className = "heart";
-    heart.alt = "Add to wishlist"
+    heart.alt = "Wishlist";
 
     heart.addEventListener("click", () => {
-        heart.src =
-            heart.src.includes("heart-empty.png")
-                ? "images/heart-filled.png"
-                : "images/heart-empty.png";
-});
-
-card.appendChild(heart);
-
-
-    const button = document.createElement("button");
-    button.textContent = "Not owned";
-
-    button.addEventListener("click", () => {
-      button.textContent =
-        button.textContent === "Not owned"
-          ? "Owned"
-          : "Not owned";
+      heart.src = heart.src.includes("heart-empty.png")
+        ? "images/heart-filled.png"
+        : "images/heart-empty.png";
     });
 
-    card.appendChild(img);
-    card.appendChild(label);
     card.appendChild(heart);
+
+    // Sonny image
+    const img = document.createElement("img");
+    img.src = sonny.img;
+    img.alt = sonny.name;
+    img.className = "sonny-img";
+    card.appendChild(img);
+
+    // Name label
+    const label = document.createElement("p");
+    label.textContent = sonny.name;
+    card.appendChild(label);
+
+    // Secret star
+    if (sonny.secret) {
+      const star = document.createElement("img");
+      star.src = "images/star.png";
+      star.className = "secret-star";
+      star.alt = "Secret";
+      card.appendChild(star);
+    }
+
+    // Owned button
+    const button = document.createElement("button");
+    button.textContent = "Not owned";
+    button.addEventListener("click", () => {
+      button.textContent =
+        button.textContent === "Not owned" ? "Owned" : "Not owned";
+    });
     card.appendChild(button);
+
     seriesContainer.appendChild(card);
   });
 
   collectionDiv.appendChild(seriesContainer);
 }
-
 
