@@ -139,6 +139,115 @@ button {
   left: 5px;
 }
 
+/* 🌸 Combined Top Navbar */
+.top-nav {
+  /* 🏗️ Layout: Stacks text on top, logo on bottom */
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: flex-start;
+  gap: 1px;              /* Space between text and logo */
+  
+  /* 📏 Sizing */
+  min-height: 120px;      /* Ensures it stays tall enough for both */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+  /* 🎨 Aesthetic & Background */
+  background-color: #FFDEEB;
+  background-image: linear-gradient(rgba(255, 222, 235, 0.8), rgba(255, 222, 235, 0.8));
+  background-size: cover;
+  background-position: center;
+  border-bottom: 4px solid #FFC9DE;
 
+  /* ✍️ Text Styling */
+  font-size: 32px;        /* Keeping the larger size you liked */
+  font-weight: bold;
+  color: #a0616a;
+  letter-spacing: 2px;
+  text-align: center;
+}
 
+/* 🎀 The Logo Style */
+.nav-logo {
+  height: 30px;           /* Bumped up slightly from 30px so it's visible */
+  width: auto;
+  display: block;
+}
 
+/* 🎀 Sidebar Container */
+.side-nav {
+  width: 220px;
+  background-color: #FFDEEB;
+  padding: 20px;
+  border-right: 2px solid #FFC9DE;
+  
+  /* Make it stay put when you scroll */
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 120px); /* Adjust based on your banner height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🔍 Search Box */
+.search-box input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #FFC9DE;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+/* 📋 Navigation List */
+.series-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Pushes stats to the bottom */
+}
+
+.series-list li {
+  margin-bottom: 8px;
+}
+
+.series-list a {
+  text-decoration: none;
+  color: #a0616a;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* ✨ Hover & Active States */
+.series-list a:hover {
+  background-color: #fff0f6;
+  color: #ff85a2;
+  padding-left: 20px; /* Subtle "slide" effect */
+}
+
+/* 📊 Bottom Stats Area */
+.stats {
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  color: #a0616a;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* 1. Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Don't hide the title under the banner */
+h2 {
+  scroll-margin-top: 160px; /* Adjust this number to match your banner's height */
+  color: #a0616a;
+  margin-top: 40px;
+}

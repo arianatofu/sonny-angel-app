@@ -32,63 +32,65 @@ const sonnySeries = {
 const collectionDiv = document.getElementById("collection");
 
 for (const series in sonnySeries) {
-  // Series title
+  // 1. Create a clean ID for the sidebar to jump to
+  const seriesId = series.toLowerCase().replace(/\s+/g, '-');
+
+  // 2. Create and append the Series Title
   const seriesTitle = document.createElement("h2");
   seriesTitle.textContent = series;
+  seriesTitle.id = seriesId; // Matches the sidebar <a href="#fruit-series">
   collectionDiv.appendChild(seriesTitle);
 
-  // Container for cards
   const seriesContainer = document.createElement("div");
   seriesContainer.className = "series";
 
-  // Cards
   sonnySeries[series].forEach(sonny => {
     const card = document.createElement("div");
     card.className = "sonny";
-    card.style.position = "relative"; // important for absolute children
 
-    // Heart in top-right
+    // 💡 NEW: Check if 'sonny' is an object or just a string
+    const sName = typeof sonny === "object" ? sonny.name : sonny;
+    const sImg = typeof sonny === "object" ? sonny.img : "images/placeholder.png";
+    const isSecret = typeof sonny === "object" ? sonny.secret : false;
+
+    // Heart Icon
     const heart = document.createElement("img");
     heart.src = "images/heart-empty.png";
     heart.className = "heart";
-    heart.alt = "Wishlist";
-
     heart.addEventListener("click", () => {
       heart.src = heart.src.includes("heart-empty.png")
         ? "images/heart-filled.png"
         : "images/heart-empty.png";
     });
-
     card.appendChild(heart);
 
-    // Sonny image
+    // Sonny Image
     const img = document.createElement("img");
-    img.src = sonny.img;
-    img.alt = sonny.name;
+    img.src = sImg; 
+    img.alt = sName;
     img.className = "sonny-img";
     card.appendChild(img);
 
     // Name label
     const label = document.createElement("p");
-    label.textContent = sonny.name;
+    label.textContent = sName;
     card.appendChild(label);
 
-    // Secret star
-    if (sonny.secret) {
+    // Secret star (only if it's an object and secret is true)
+    if (isSecret) {
       const star = document.createElement("img");
       star.src = "images/star.png";
       star.className = "secret-star";
-      star.alt = "Secret";
       card.appendChild(star);
     }
 
     // Owned button
     const button = document.createElement("button");
     button.textContent = "Not owned";
-    button.addEventListener("click", () => {
-      button.textContent =
-        button.textContent === "Not owned" ? "Owned" : "Not owned";
-    });
+    button.onclick = () => {
+      button.textContent = button.textContent === "Not owned" ? "Owned" : "Not owned";
+      button.style.backgroundColor = button.textContent === "Owned" ? "#b5ead7" : "#FFC9DE";
+    };
     card.appendChild(button);
 
     seriesContainer.appendChild(card);
@@ -96,4 +98,3 @@ for (const series in sonnySeries) {
 
   collectionDiv.appendChild(seriesContainer);
 }
-

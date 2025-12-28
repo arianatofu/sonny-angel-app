@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Sonny Angel Collection</title>
+  <title>My Sonny Angels</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Top Navbar -->
   <div class="top-nav">
-    My Sonny Angel Collection
+    <span>My Sonny Angels</span><br/>
+    <img src="images/logo.png" alt="Logo" class="nav-logo">
   </div>
 
   <div class="layout">
     <!-- Side Navbar -->
     <div class="side-nav">
-      <h3>Series</h3>
-      <p>Fruit</p>
-      <p>Animal</p>
-      <p>Flower</p>
+        <div class="search-box">
+            <input type="text" placeholder="Search series..." id="seriesSearch">
     </div>
+
+    <h3>Series</h3>
+    <ul class="series-list">
+        <li><a href="#fruit-series">Fruit</a></li>
+        <li><a href="#animal-series">Animal</a></li>
+        <li><a href="#flower-series">Flower</a></li>
+        <li><a href="#vegetable-series">Vegetable</a></li>
+    </ul>
+  
+    <div class="stats">
+        <p>Collected: <span id="count">0</span>/72</p>
+    </div>
+</div>
 
     <!-- Main Content -->
     <div class="main-content">
