@@ -1,44 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>My Sonny Angels</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Top Navbar -->
+
+  <!-- TOP NAV -->
   <div class="top-nav">
-    <span>My Sonny Angels</span><br/>
-    <img src="images/logo.png" alt="Logo" class="nav-logo">
+    <span>My Sonny Angels</span>
+    <img src="images/logo.png" class="nav-logo" alt="logo">
   </div>
 
   <div class="layout">
-    <!-- Side Navbar -->
+
+    <!-- SIDE NAV -->
     <div class="side-nav">
-        <div class="search-box">
-            <input type="text" placeholder="Search series..." id="seriesSearch">
-    </div>
+  <input type="text" id="seriesSearch" placeholder="Search series...">
 
-    <h3>Series</h3>
-    <ul class="series-list">
-        <li><a href="#fruit-series">Fruit</a></li>
-        <li><a href="#animal-series">Animal</a></li>
-        <li><a href="#flower-series">Flower</a></li>
-        <li><a href="#vegetable-series">Vegetable</a></li>
-    </ul>
-  
-    <div class="stats">
-        <p>Collected: <span id="count">0</span>/72</p>
-    </div>
+  <p class="nav-label">Jump to Series</p>
+  <ul id="seriesNav" class="series-list"></ul>
+
+  <hr class="nav-divider">
+
+  <p class="nav-label">Filters</p>
+  <ul class="page-links">
+    <li><a href="collection.html" class="nav-link">💗 My Collection</a></li>
+    <li><a href="favorites.html" class="nav-link">💗 Favorites</a></li>
+    <li><a href="stats.html" class="nav-link">💗 Statistics</a></li>
+  </ul>
+
+  <div class="stats-peek">
+    Total Owned: <span id="count">0</span>
+  </div>
 </div>
-
-    <!-- Main Content -->
+    <!-- MAIN CONTENT -->
     <div class="main-content">
       <p class="subtitle">Click to mark which ones you own</p>
       <div id="collection"></div>
     </div>
+
   </div>
 
+  <!-- ⚠️ SCRIPT MUST BE LAST -->
   <script src="script.js"></script>
 </body>
-
 </html>

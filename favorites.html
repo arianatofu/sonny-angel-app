@@ -1,0 +1,19 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const favContainer = document.getElementById("favorites-grid");
+  const favorites = JSON.parse(localStorage.getItem("sonnyFavorites")) || [];
+
+  if (favorites.length === 0) {
+    favContainer.innerHTML = "<p>No favorites yet! Go heart some angels! 🌸</p>";
+    return;
+  }
+
+  favorites.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "sonny";
+    card.innerHTML = `
+      <img src="${item.img}" class="sonny-img">
+      <p>${item.name}</p>
+    `;
+    favContainer.appendChild(card);
+  });
+});

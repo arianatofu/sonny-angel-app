@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Shelf | My Sonny Angels</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <div class="side-nav">
+      <ul id="seriesNav" class="series-list"></ul>
+      <hr class="nav-divider">
+      <ul class="page-links">
+        <li><a href="index.html" class="nav-link">🎀 All Series</a></li>
+        <li><a href="collection.html" class="nav-link active">✨ My Collection</a></li>
+        <li><a href="favorites.html" class="nav-link">⭐ Favorites</a></li>
+        <li><a href="stats.html" class="nav-link">📈 Statistics</a></li>
+      </ul>
+      <div class="stats-peek">Collected: <span id="count">0</span></div>
+    </div>
+
+    <div class="main-content">
+      <h2>✨ My Owned Angels</h2>
+      <div id="collection-shelf"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="collection.js"></script>
+</body>
+</html>

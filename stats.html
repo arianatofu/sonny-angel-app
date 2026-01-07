@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stats | My Sonny Angels</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <div class="side-nav">
+      <ul id="seriesNav" class="series-list"></ul>
+      <hr class="nav-divider">
+      <ul class="page-links">
+        <li><a href="index.html" class="nav-link">🎀 All Series</a></li>
+        <li><a href="collection.html" class="nav-link">✨ My Collection</a></li>
+        <li><a href="favorites.html" class="nav-link">⭐ Favorites</a></li>
+        <li><a href="stats.html" class="nav-link active">📈 Statistics</a></li>
+      </ul>
+      <div class="stats-peek">Collected: <span id="count">0</span></div>
+    </div>
+
+    <div class="main-content">
+      <h2>📈 Collection Statistics</h2>
+      <div id="stats-container">
+        <p>Total Owned: <span id="stat-total">0</span></p>
+        <p>Completion: <span id="stat-percent">0%</span></p>
+        <div id="series-breakdown"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>
